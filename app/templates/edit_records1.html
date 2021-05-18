@@ -1,0 +1,170 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="form-wrapper">
+        <h2 class="title">Edit Records</h2>
+
+        <form method="POST">
+            {{ edit_form.csrf_token }}
+            <fieldset class="form-field">
+                <li>
+                    {{ edit_form.Employee.label }}
+                    {{ edit_form.Employee(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.StartTime.label }}
+                    {{ edit_form.StartTime(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.TableNumber.label }}
+                    {{ edit_form.TableNumber(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.Part.label }}
+                    {{ edit_form.Part(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.Job.label }}
+                    {{ edit_form.Job(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.GoodQuantity.label }}
+                    {{ edit_form.GoodQuantity(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.Assembly.label }}
+                    {{ edit_form.Assembly(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.AutoSort.label }}
+                    {{ edit_form.AutoSort(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.BadThreads.label }}
+                    {{ edit_form.BadThreads(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.Bent.label }}
+                    {{ edit_form.Bent(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.Blisters.label }}
+                    {{ edit_form.Blisters(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.BrokenCore.label }}
+                    {{ edit_form.BrokenCore(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.Buffing.label }}
+                    {{ edit_form.Buffing(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.Contamination.label }}
+                    {{ edit_form.Contamination(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.DamagedDie.label }}
+                    {{ edit_form.DamagedDie(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.Debris.label }}
+                    {{ edit_form.Debris(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.Dimensional.label }}
+                    {{ edit_form.Dimensional(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.Flash.label }}
+                    {{ edit_form.Flash(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.GateVestige.label }}
+                    {{ edit_form.GateVestige(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.HeatSinks.label }}
+                    {{ edit_form.HeatSinks(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.EjectorPinLength.label }}
+                    {{ edit_form.EjectorPinLength(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.Lamination.label }}
+                    {{ edit_form.Lamination(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.LeakTest.label }}
+                    {{ edit_form.LeakTest(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.MixedParts.label }}
+                    {{ edit_form.MixedParts(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.Other.label }}
+                    {{ edit_form.Other(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.PartDamage.label }}
+                    {{ edit_form.PartDamage(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.PartsNotTapped.label }}
+                    {{ edit_form.PartsNotTapped(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.PartsOnGates.label }}
+                    {{ edit_form.PartsOnGates(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.Plating.label }}
+                    {{ edit_form.Plating(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.PoorFill.label }}
+                    {{ edit_form.PoorFill(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.Porosity.label }}
+                    {{ edit_form.Porosity(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.Skiving.label }}
+                    {{ edit_form.Skiving(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.Soldering.label }}
+                    {{ edit_form.Soldering(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.StartUp.label }}
+                    {{ edit_form.StartUp(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.SurfaceFinish.label }}
+                    {{ edit_form.SurfaceFinish(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.TrimDamage.label }}
+                    {{ edit_form.TrimDamage(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.Weight.label }}
+                    {{ edit_form.Weight(size=20) }}
+                </li>
+                <li>
+                    {{ edit_form.WrongPart.label }}
+                    {{ edit_form.WrongPart(size=20) }}
+                </li>
+            </fieldset>
+            {{ edit_form.submit }}
+        </form>
+        <p> 
+
+            blank space
+        </p>
+    </div>
+{% endblock %}

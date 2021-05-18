@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="form-wrapper">
+        <h2 class="title">Search</h2>
+
+        <form method="GET" action="{{ url_for('records') }}">
+            {{ form.csrf_token }}
+
+            <fieldset class="form-field">
+                {{ form.date.label }}
+                {{ form.date(size=20) }}
+                {{ form.part.label }}
+                {{ form.part(size=20) }}
+                {{ form.job.label }}
+                {{ form.job(size=20) }}
+            </fieldset>
+
+            {{ form.submit }}
+        </form>
+    </div>
+{% endblock %}

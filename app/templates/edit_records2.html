@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="form-wrapper">
+        <h2 class="title">Edit Records</h2>
+
+        <form method="POST">
+            {{ edit_form.hidden_tag() }}
+            <fieldset class="form-field">
+                {% for field in edit_form if field.widget.input_type != 'hidden' %}
+                    <li>
+                        {{ field.label }}
+                        {{ field }}
+                    </li>
+                {% endfor %}
+            </fieldset>
+        </form>
+        <p> 
+
+            blank space
+        </p>
+    </div>
+{% endblock %}

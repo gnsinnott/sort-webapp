@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<style> 
+    .container {
+      column-count: 4;
+    }
+    </style>
+<div class="container">
+
+    {% for reason in reasons %}
+    <ul id=reason.scrap_reason>
+        <li>
+            <span class="field-value">{{ reason.scrap_reason }}</span>
+        </li>
+    </ul>
+    {% endfor %}
+</div>
+
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+
+    <fieldset class="form-field">
+        {{ form.scrap_reason.label }}
+        {{ form.scrap_reason(size=20) }}
+    </fieldset>
+
+    {{ form.submit }}
+</form>
+
+{% endblock %}
