@@ -77,11 +77,11 @@ def records():
             Record.StartTime.startswith(dateCriteria),
             Record.Part.startswith(partCriteria),
             Record.Job.startswith(jobCriteria)).all()
-    write.writerows(records)
-    response = make_response(memoryString.getvalue())
-    response.headers['Content-Disposition'] = 'attachment, filename=report.csv'
-    response.headers['Content-type'] = "text/csv"
-    return response()
+    # write.writerows(records)
+    # response = make_response(memoryString.getvalue())
+    # response.headers['Content-Disposition'] = 'attachment, filename=report.csv'
+    # response.headers['Content-type'] = "text/csv"
+    # return response()
     print (type(records))
     return render_template(
         'records.html',
