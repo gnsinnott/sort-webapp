@@ -1,5 +1,5 @@
 from flask import request, make_response, render_template, redirect, url_for, flash, jsonify, make_response
-from datetime import datetime as dt
+from datetime import date, datetime as dt
 from flask import current_app as app
 
 from .models import db, Record, ScrapReasons, RecordSchema
@@ -67,8 +67,6 @@ def records():
     if not jobCriteria:
         jobCriteria = ""
 
-    memoryString = StringIO() #object in memory not on disk
-    write = csv.writer(memoryString)
     records = Record.query.filter(
             Record.StartTime.startswith(dateCriteria),
             Record.Part.startswith(partCriteria),
@@ -77,12 +75,19 @@ def records():
             Record.StartTime.startswith(dateCriteria),
             Record.Part.startswith(partCriteria),
             Record.Job.startswith(jobCriteria)).all()
-    # write.writerows(records)
-    # response = make_response(memoryString.getvalue())
-    # response.headers['Content-Disposition'] = 'attachment, filename=report.csv'
-    # response.headers['Content-type'] = "text/csv"
-    # return response()
-    print (type(records))
+
+    # create csv file with todays date, populate csv with query results
+    filename = str(dt.now().strftime("%Y%m%d%H%M%S")) + ".csv"
+    w_file = open(filename, 'a')
+    writer = csv.DictWriter(w_file, fieldnames=Record.__table__.columns.keys())
+    writer.writeheader()
+    for row in exportRecords:
+        print(row.__dict__)
+        rowdict = row.__dict__
+        rowdict.pop('_sa_instance_state', None)
+        writer.writerow(rowdict)
+    w_file.close()
+
     return render_template(
         'records.html',
         records=records
