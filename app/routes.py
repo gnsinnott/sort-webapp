@@ -1,12 +1,11 @@
 from flask import request, make_response, render_template, redirect, url_for, flash, jsonify, make_response
-from datetime import date, datetime as dt
+from datetime import datetime as dt
 from flask import current_app as app
 
 from .models import db, Record, ScrapReasons, RecordSchema
 from .forms import SearchForm, EditForm, NewScrap, EditScrap, BigEdit
 
 import csv
-from io import StringIO
 
 def totalScrap(id):
     record = Record.query.get(id)
@@ -149,30 +148,47 @@ def api_id():
 def upload_record():
     record_schema = RecordSchema()
     json_data = request.get_json()
+    # Check if json data is recieved
     if not json_data:
         return {"message": "No input data provided"}
+    
     data = record_schema.load(json_data)
-    employee = data["Employee"]
-    starttime = data["StartTime"]
-    tablenumber = data["TableNumber"]
-    job = data["Job"]
-    part = data["Part"]
-    GoodQuantity = data["GoodQuantity"]
+    # employee = data["Employee"]
+    # starttime = data["StartTime"]
+    # tablenumber = data["TableNumber"]
+    # job = data["Job"]
+    # part = data["Part"]
+    # GoodQuantity = data["GoodQuantity"]
+    # Operation = data["Operation"]
+    # CastDate = data["CastDate"]
+    # CastShift = data["CastShift"]
 
-    new_record = Record(Employee=employee, StartTime=starttime, TableNumber=tablenumber, Job=job, Part=part, GoodQuantity=GoodQuantity)
-    employee = data['Employee']
+    # new_record = Record(Employee=employee, CastDate=CastDate, Operation=Operation, StartTime=starttime, TableNumber=tablenumber, Job=job, Part=part, GoodQuantity=GoodQuantity)
+    # new_record.CastShift = CastShift
+    new_record = Record()
+
+    #Iterate through JSON data and assign each key value pair to matching key in new_record
+    for key in data:
+        print(key)
+        print(data[key])
+        new_record.__setattr__(key, data[key])
     db.session.add(new_record)
     db.session.commit()
-    return employee
+    # Get ID of row created
+    id = new_record.id
+    return("Record " + str(id) + " created")
 
-@app.route("/api/v1/finish_record", methods=['GET', 'POST'])
-def finish_record(id):
+@app.route("/api/v1/finish_record/", methods=['GET', 'POST'])
+def finish_record():
+    if 'id' in request.args:
+        id = int(request.args['id'])
     record_schema = RecordSchema()
     record = Record.query.get(id)
     json_data = request.get_json()
     if not json_data:
         return{"message": "No input data provided"}
-    data = record_schema.load(json_data)
+    for key in json_data:
+        record.__setattr__(key, json_data[key])
+    db.session.commit()   
     
-
-    return "Hello"
+    return("Record " + str(id) + " updated")
