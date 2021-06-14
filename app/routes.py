@@ -1,4 +1,4 @@
-from flask import request, make_response, render_template, redirect, url_for, flash, jsonify, make_response
+from flask import request, make_response, render_template, redirect, url_for, flash, jsonify, make_response, send_file, session
 from datetime import datetime as dt
 from flask import current_app as app
 
@@ -6,6 +6,8 @@ from .models import db, Record, ScrapReasons, RecordSchema
 from .forms import SearchForm, EditForm, NewScrap, EditScrap, BigEdit
 
 import csv
+
+import os.path
 
 def totalScrap(id):
     record = Record.query.get(id)
@@ -23,7 +25,7 @@ def home():
 @app.route("/newrecord")
 def new_record():
     # Create a user via query string parameters
-    Employee = 'greg'
+    Employee = 'Number 9'
     if Employee:
         # Sample Data to create test records
         new_record = Record(
@@ -66,20 +68,25 @@ def records():
     if not jobCriteria:
         jobCriteria = ""
 
+    # query that only shows first 20 results
     records = Record.query.filter(
             Record.StartTime.startswith(dateCriteria),
             Record.Part.startswith(partCriteria),
             Record.Job.startswith(jobCriteria)).limit(20).all()
+
+    # same query as above but includes all results, used for csv file download
     exportRecords = Record.query.filter(
             Record.StartTime.startswith(dateCriteria),
             Record.Part.startswith(partCriteria),
             Record.Job.startswith(jobCriteria)).all()
 
-    # create csv file with todays date, populate csv with query results
-    filename = str(dt.now().strftime("%Y%m%d%H%M%S")) + ".csv"
-    w_file = open(filename, 'a')
+    # create csv file with todays date, populate csv with query results for exportRecords
+    # file created in downloads folder
+    session['filename'] = str(dt.now().strftime("%Y%m%d%H%M%S")) + ".csv"
+    w_file = open(os.path.join("app/downloads",session.get('filename', None)), 'a')
     writer = csv.DictWriter(w_file, fieldnames=Record.__table__.columns.keys())
     writer.writeheader()
+    # writes each row in query result to csv file
     for row in exportRecords:
         print(row.__dict__)
         rowdict = row.__dict__
@@ -91,6 +98,14 @@ def records():
         'records.html',
         records=records
     )
+
+@app.route("/records/download", methods=['GET', 'POST'])
+def download_records():
+    filename = session.get('filename', None)
+    # serve file from downloads folder
+    return send_file(os.path.join("downloads/",filename), mimetype='text/csv', attachment_filename=filename, as_attachment=True)
+
+
 
 @app.route("/edit_record/<id>", methods=['POST', 'GET'])
 def edit_record(id):
@@ -153,18 +168,7 @@ def upload_record():
         return {"message": "No input data provided"}
     
     data = record_schema.load(json_data)
-    # employee = data["Employee"]
-    # starttime = data["StartTime"]
-    # tablenumber = data["TableNumber"]
-    # job = data["Job"]
-    # part = data["Part"]
-    # GoodQuantity = data["GoodQuantity"]
-    # Operation = data["Operation"]
-    # CastDate = data["CastDate"]
-    # CastShift = data["CastShift"]
 
-    # new_record = Record(Employee=employee, CastDate=CastDate, Operation=Operation, StartTime=starttime, TableNumber=tablenumber, Job=job, Part=part, GoodQuantity=GoodQuantity)
-    # new_record.CastShift = CastShift
     new_record = Record()
 
     #Iterate through JSON data and assign each key value pair to matching key in new_record
