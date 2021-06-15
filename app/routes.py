@@ -88,7 +88,6 @@ def records():
     writer.writeheader()
     # writes each row in query result to csv file
     for row in exportRecords:
-        print(row.__dict__)
         rowdict = row.__dict__
         rowdict.pop('_sa_instance_state', None)
         writer.writerow(rowdict)
@@ -102,6 +101,7 @@ def records():
 @app.route("/records/download", methods=['GET', 'POST'])
 def download_records():
     filename = session.get('filename', None)
+    print(filename)
     # serve file from downloads folder
     return send_file(os.path.join("downloads/",filename), mimetype='text/csv', attachment_filename=filename, as_attachment=True)
 
@@ -173,8 +173,6 @@ def upload_record():
 
     #Iterate through JSON data and assign each key value pair to matching key in new_record
     for key in data:
-        print(key)
-        print(data[key])
         new_record.__setattr__(key, data[key])
     db.session.add(new_record)
     db.session.commit()
