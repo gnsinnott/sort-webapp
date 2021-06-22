@@ -12,7 +12,8 @@ class SearchForm(FlaskForm) :
 
 class EditForm(FlaskForm) :
     Employee = StringField('Employee', [DataRequired()])
-    StartTime = DateTimeField('Start Time', [DataRequired()])
+    StartTime = DateTimeField('Start Time (Year-Month-Day Hours:Min:Sec)', [DataRequired()])
+    EndTime = DateTimeField('End Time (Year-Month-Day Hours:Min:Sec)')
     TableNumber = IntegerField('Table #', [DataRequired()])
     Part = IntegerField('Part', [DataRequired()])
     Job = IntegerField('Job #', [DataRequired()])

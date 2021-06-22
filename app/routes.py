@@ -37,7 +37,8 @@ def new_record():
             GoodQuantity=125,
             Operation=20,
             CastDate=dt.now(),
-            CastShift=2
+            CastShift=2,
+            EndTime=dt.now()
         )
         db.session.add(new_record)  # Adds new User record to database
         db.session.commit()  # Commits all changes

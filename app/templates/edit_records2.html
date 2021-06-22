@@ -5,13 +5,16 @@
         <h2 class="title">Edit Records</h2>
 
         <form method="POST">
+            {{ edit_form.csrf_token }}
             {{ edit_form.hidden_tag() }}
             <fieldset class="form-field">
                 {% for field in edit_form if field.widget.input_type != 'hidden' %}
+                <ul>
                     <li>
                         {{ field.label }}
                         {{ field }}
                     </li>
+                </ul>
                 {% endfor %}
             </fieldset>
         </form>
