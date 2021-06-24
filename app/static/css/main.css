@@ -26,6 +26,12 @@ div {
   padding: 20px;
 }
 
+.banner {
+  border-radius: 5px;
+  background-color: #2073b7;
+  padding: 20px;
+}
+
 .collapsible {
   background-color: rgb(177, 72, 72);
   color: white;
