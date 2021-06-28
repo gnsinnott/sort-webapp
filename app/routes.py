@@ -1,6 +1,7 @@
 from flask import request, make_response, render_template, redirect, url_for, flash, jsonify, make_response, send_file, session
 from datetime import datetime as dt
 from flask import current_app as app
+from sqlalchemy.orm.query import LockmodeArg
 
 from .models import db, Record, ScrapReasons, RecordSchema
 from .forms import SearchForm, EditForm, NewScrap, EditScrap, BigEdit
@@ -165,6 +166,9 @@ def upload_record():
     record_schema = RecordSchema()
     json_data = request.get_json()
     # Check if json data is recieved
+    current_time = str(dt.now())
+    json_data["StartTime"] = current_time
+
     if not json_data:
         return {"message": "No input data provided"}
     
@@ -179,12 +183,13 @@ def upload_record():
     db.session.commit()
     # Get ID of row created
     id = new_record.id
-    return("Record " + str(id) + " created")
+    return {"response" :"Record " + str(id) + " created", "error" : False, "index" : str(id)}
 
 @app.route("/api/v1/finish_record/", methods=['GET', 'POST'])
 def finish_record():
-    if 'id' in request.args:
-        id = int(request.args['id'])
+    json_data = request.get_json()
+    id = int(json_data['index'])
+    json_data.pop("index")
     record_schema = RecordSchema()
     record = Record.query.get(id)
     json_data = request.get_json()
