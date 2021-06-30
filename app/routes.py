@@ -165,38 +165,47 @@ def api_id():
 def upload_record():
     record_schema = RecordSchema()
     json_data = request.get_json()
-    # Check if json data is recieved
-    current_time = str(dt.now())
-    json_data["StartTime"] = current_time
 
+    # Check if json data is recieved
     if not json_data:
         return {"message": "No input data provided"}
-    
+
+    # Set start time
+    now = dt.now()
+    current_time = now.strftime("%Y-%m-%d %H:%M:%S")
+    json_data["StartTime"] = current_time
+
     data = record_schema.load(json_data)
 
     new_record = Record()
 
     #Iterate through JSON data and assign each key value pair to matching key in new_record
     for key in data:
+        with open('app/logs.txt', 'a') as file2:
+            file2.write(key + str(data[key]) + "\n")
         new_record.__setattr__(key, data[key])
+
+
     db.session.add(new_record)
     db.session.commit()
     # Get ID of row created
     id = new_record.id
     return {"response" :"Record " + str(id) + " created", "error" : False, "index" : str(id)}
 
-@app.route("/api/v1/finish_record/", methods=['GET', 'POST'])
+@app.route("/api/v1/finish_record", methods=['GET', 'POST'])
 def finish_record():
     json_data = request.get_json()
     id = int(json_data['index'])
     json_data.pop("index")
-    record_schema = RecordSchema()
+    now = dt.now()
+    json_data["EndTime"] = now
     record = Record.query.get(id)
-    json_data = request.get_json()
     if not json_data:
         return{"message": "No input data provided"}
     for key in json_data:
         record.__setattr__(key, json_data[key])
+        with open('app/logs.txt', 'a') as file1:
+            file1.write(key + str(json_data[key]) + "\n")
     db.session.commit()   
     
-    return("Record " + str(id) + " updated")
+    return{"response" : "Record " + str(id) + " updated", "error": False}

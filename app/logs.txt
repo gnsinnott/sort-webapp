@@ -1,0 +1,32 @@
+Contamination65
+TrimDamage1
+GoodQuantity100
+EndTime2021-06-30 14:43:07.675907
+Contamination65
+TrimDamage1
+GoodQuantity100
+EndTime2021-06-30 14:43:13.331147
+TableNumber24
+Part9223446
+CastDate2021-06-02 00:00:00
+CastShift1
+EndTime2021-06-30 11:51:20
+Operation20
+StartTime2021-06-30 14:43:37
+Job74574
+GoodQuantity0
+Employee24
+TableNumber24
+Part9223446
+CastDate2021-06-02 00:00:00
+CastShift1
+Operation20
+StartTime2021-06-30 14:43:45
+Job74574
+GoodQuantity0
+Employee24
+Contamination65
+TrimDamage1
+GoodQuantity100
+Bent34
+EndTime2021-06-30 14:44:05.202271
