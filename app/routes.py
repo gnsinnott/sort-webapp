@@ -1,13 +1,13 @@
-from flask import request, make_response, render_template, redirect, url_for, flash, jsonify, make_response, send_file, session
+from flask import json, request, make_response, render_template, redirect, url_for, flash, jsonify, make_response, send_file, session
 from datetime import datetime as dt
 from flask import current_app as app
 from sqlalchemy.orm.query import LockmodeArg
 
 from .models import db, Record, ScrapReasons, RecordSchema
 from .forms import SearchForm, EditForm, NewScrap, EditScrap, BigEdit
-
 import csv
 
+from .log import log_this
 import os.path
 
 # Home page of website
@@ -116,7 +116,10 @@ def edit_record(id):
         return redirect("/records")
     # TODO Evaluate need or functionaly of this 
     with open('app/errors.txt', 'a') as errorFile:
-        errorFile.write(edit_form.errors)
+        for key in edit_form.errors: 
+            for value in edit_form.errors[key]:
+                errorFile.write(key + ": " + value + "\n")
+
 
     return render_template(
         'edit_records2.html',
@@ -161,13 +164,15 @@ def api_id():
 def upload_record():
     record_schema = RecordSchema()
     json_data = request.get_json()
+    log_this(json_data, "json.txt")
 
     # Check if json data is recieved
     if not json_data:
         return {"message": "No input data provided", "error": True}
 
     # Set start time
-    json_data["StartTime"] = dt.now()
+    now = dt.now().strftime("%Y-%m-%d %H:%M:%S")
+    json_data["StartTime"] = now
 
     # Convert json data into Record format as defined in models.py
     data = record_schema.load(json_data)
@@ -189,11 +194,14 @@ def upload_record():
 @app.route("/api/v1/finish_record", methods=['GET', 'POST'])
 def finish_record():
     json_data = request.get_json()
+    log_this(json_data, "json.txt")
     # Retrieve record id from json_data and then delete it from json_data
     id = int(json_data['index'])
     json_data.pop("index")
     # Set End time
-    json_data["EndTime"] = dt.now()
+    now = dt.strptime(dt.now().strftime("%Y-%m-%d %H:%M:%S"),"%Y-%m-%d %H:%M:%S")
+    print(now)
+    json_data["EndTime"] = now
     # Select record from db
     record = Record.query.get(id)
     if not json_data:
@@ -205,5 +213,18 @@ def finish_record():
     
     # Reply with convirmation of record update
     return{"response" : "Record " + str(id) + " updated", "error": False}
+
+@app.route("/app/download", methods=['GET', 'POST'])
+def app_downloads():
+    return render_template(
+        "downloads.html",
+        title = "App Downloads"
+    )
+@app.route("/app/download/android", methods=['GET'])
+def android_download():
+    filename = 'app-release.apk'
+    return send_file(os.path.join("android/latest/", filename), mimetype='application/vnd.android.package-archive', attachment_filename=filename, as_attachment=True)
+
+
 
 #TODO Add app download page

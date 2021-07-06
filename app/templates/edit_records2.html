@@ -6,7 +6,7 @@
 
         <form method="POST">
             {{ edit_form.csrf_token }}
-            {{ edit_form.hidden_tag() }}
+            <!-- {{ edit_form.hidden_tag() }} -->
             <fieldset class="form-field">
                 {% for field in edit_form if field.widget.input_type != 'hidden' %}
                 <ul>

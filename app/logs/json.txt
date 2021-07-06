@@ -1,0 +1,70 @@
+21-07-02 15:32:37
+Employee: 144
+TableNumber: 1
+Job: 54321
+CastDate: 2021-7-15T00:00:00
+CastShift: 3
+Operation: 45
+Part: 54
+GoodQuantity: 0
+
+21-07-02 15:33:14
+Employee: 8
+TableNumber: 8
+Job: 87654
+CastDate: 2021-7-5T00:00:00
+CastShift: 1
+Operation: 3
+Part: 8
+GoodQuantity: 0
+
+21-07-02 15:33:24
+AutoSort: 43
+GoodQuantity: 2
+index: 117
+
+21-07-02 15:47:56
+Employee: 2
+TableNumber: 5
+Job: 65432
+CastDate: 2021-7-15T00:00:00
+CastShift: 1
+Operation: 1
+Part: 31
+GoodQuantity: 0
+
+21-07-02 15:49:43
+GoodQuantity: 54
+index: 118
+
+21-07-06 11:32:15
+Employee: 40
+TableNumber: 4
+Job: 45123
+CastDate: 2021-7-13T00:00:00
+CastShift: 1
+Operation: 50
+Part: 9228454
+GoodQuantity: 0
+
+21-07-06 11:32:25
+Plating: 30
+TrimDamage: 1
+GoodQuantity: 25
+index: 119
+
+21-07-06 13:36:02
+Employee: 78
+TableNumber: 88
+Job: 84756
+CastDate: 2021-6-2T00:00:00
+CastShift: 1
+Operation: 1
+Part: 1
+GoodQuantity: 0
+
+21-07-06 13:36:12
+BadThreads: 42
+GoodQuantity: 23
+index: 120
+
