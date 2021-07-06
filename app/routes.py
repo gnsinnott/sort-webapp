@@ -57,7 +57,6 @@ def records():
     criteria = {}
     # iterate over args and add it to criteria dictionary
     for key, value in request.args.items():
-        log_this(key, "args.txt")
         criteria[key] = value
     # if no items added to criteria set all values to 0 and return limit to 20
     if len(criteria) == 0:
@@ -70,7 +69,7 @@ def records():
         dateCriteria = criteria["date"]
         partCriteria = criteria["part"]
         jobCriteria = criteria["job"]
-        returnLimit = 0 # return limit 0 returns all records
+        returnLimit = -1 # return limit -1 equals all
 
     # query that only shows first 20 results
     records = Record.query.filter(

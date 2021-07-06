@@ -68,3 +68,28 @@ BadThreads: 42
 GoodQuantity: 23
 index: 120
 
+21-07-06 17:05:02
+Employee: 24
+TableNumber: 24
+Job: 74574
+CastDate: 2021-6-2T00:00:00
+CastShift: 1
+Operation: 20
+Part: 9223446
+GoodQuantity: 0
+21-07-06 17:13:23
+String 
+{'Employee': '24', 'TableNumber': '24', 'Job': '74574', 'CastDate': '2021-6-2T00:00:00', 'CastShift': '1', 'Operation': '20', 'Part': '9223446', 'GoodQuantity': '0'}
+21-07-06 17:17:50
+String 
+{'Employee': '24', 'TableNumber': '24', 'Job': '74574', 'CastDate': '2021-6-2T00:00:00', 'CastShift': '1', 'Operation': '20', 'Part': '9223446', 'GoodQuantity': '0'}
+21-07-06 17:17:55
+{'Employee': '24', 'TableNumber': '24', 'Job': '74574', 'CastDate': '2021-6-2T00:00:00', 'CastShift': '1', 'Operation': '20', 'Part': '9223446', 'GoodQuantity': '0'}
+21-07-06 17:17:56
+{'Employee': '24', 'TableNumber': '24', 'Job': '74574', 'CastDate': '2021-6-2T00:00:00', 'CastShift': '1', 'Operation': '20', 'Part': '9223446', 'GoodQuantity': '0'}
+21-07-06 17:18:23
+{'Employee': '24', 'TableNumber': '24', 'Job': '74574', 'CastDate': '2021-6-2T00:00:00', 'CastShift': '1', 'Operation': '20', 'Part': '9223446', 'GoodQuantity': '0'}
+
+21-07-06 17:18:24
+{'Employee': '24', 'TableNumber': '24', 'Job': '74574', 'CastDate': '2021-6-2T00:00:00', 'CastShift': '1', 'Operation': '20', 'Part': '9223446', 'GoodQuantity': '0'}
+
