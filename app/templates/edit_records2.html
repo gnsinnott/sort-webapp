@@ -4,7 +4,7 @@
     <div class="form-wrapper">
         <h2 class="title">Edit Records</h2>
 
-        <form method="POST">
+        <form method="POST" action="{{ url_for('records') }}">
             {{ edit_form.csrf_token }}
             <!-- {{ edit_form.hidden_tag() }} -->
             <fieldset class="form-field">

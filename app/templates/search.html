@@ -8,15 +8,13 @@
             {{ form.csrf_token }}
 
             <fieldset class="form-field">
-                {{ form.date.label }}
-                {{ form.date(size=20) }}
-                {{ form.part.label }}
-                {{ form.part(size=20) }}
-                {{ form.job.label }}
-                {{ form.job(size=20) }}
+                {% for field in form if field.widget.input_type != 'hidden' %}
+                <ul>
+                        {{ field.label }}
+                        {{ field }}
+                </ul>
+                {% endfor %}
             </fieldset>
-
-            {{ form.submit }}
         </form>
     </div>
 {% endblock %}

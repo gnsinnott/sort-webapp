@@ -54,21 +54,29 @@ def search():
 
 @app.route("/records", methods=['GET', 'POST'])
 def records():
-    dateCriteria = request.args.get('date') #Date sent in args, should add other search criteria
-    partCriteria = request.args.get('part')
-    jobCriteria = request.args.get('job')
-    if not partCriteria:
+    criteria = {}
+    # iterate over args and add it to criteria dictionary
+    for key, value in request.args.items():
+        log_this(key, "args.txt")
+        criteria[key] = value
+    # if no items added to criteria set all values to 0 and return limit to 20
+    if len(criteria) == 0:
+        returnLimit = 20
+        dateCriteria = ""
         partCriteria = ""
-    if not dateCriteria:
-        dateCriteria = "2021" # If no date arg use 2021, should maybe only show active???
-    if not jobCriteria:
         jobCriteria = ""
+    # if items found add them to the search criteria variables and set return limit to 0 
+    else:
+        dateCriteria = criteria["date"]
+        partCriteria = criteria["part"]
+        jobCriteria = criteria["job"]
+        returnLimit = 0 # return limit 0 returns all records
 
     # query that only shows first 20 results
     records = Record.query.filter(
             Record.StartTime.startswith(dateCriteria),
             Record.Part.startswith(partCriteria),
-            Record.Job.startswith(jobCriteria)).limit(20).all()
+            Record.Job.startswith(jobCriteria)).limit(returnLimit).all()
 
     # same query as above but includes all results, used for csv file download
     exportRecords = Record.query.filter(
@@ -112,8 +120,6 @@ def edit_record(id):
     if edit_form.validate():
         edit_form.populate_obj(record)
         db.session.commit()
-        # TODO fix this redirect, currently stays on same page
-        return redirect("/records")
     # TODO Evaluate need or functionaly of this 
     with open('app/errors.txt', 'a') as errorFile:
         for key in edit_form.errors: 
@@ -145,8 +151,7 @@ def scrapreasons():
         reasons = ScrapReasons.query.all()
         )
 
-# API to retrive record using by id number, not in use
-# TODO evalue deletion fo this route
+# API to retrive record by id number
 @app.route("/api/v1/records/", methods=['GET'])
 def api_id():
     # get id from args
@@ -224,7 +229,3 @@ def app_downloads():
 def android_download():
     filename = 'app-release.apk'
     return send_file(os.path.join("android/latest/", filename), mimetype='application/vnd.android.package-archive', attachment_filename=filename, as_attachment=True)
-
-
-
-#TODO Add app download page
