@@ -17,6 +17,8 @@ class EditForm(FlaskForm) :
     TableNumber = IntegerField('Table #', [DataRequired()])
     Part = IntegerField('Part', [DataRequired()])
     Job = IntegerField('Job #', [DataRequired()])
+    CastDate = DateTimeField('Cast Date (Year-Month-Day)')
+    CastShift = IntegerField('Cast Shift', validators=[Optional(strip_whitespace=True)])
     GoodQuantity = IntegerField('Good Quantity', validators=[Optional(strip_whitespace=True)])
     Assembly = IntegerField('Assembly', validators=[Optional(strip_whitespace=True)])
     AutoSort = IntegerField('AutoSort', validators=[Optional(strip_whitespace=True)])

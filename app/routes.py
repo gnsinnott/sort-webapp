@@ -119,6 +119,7 @@ def edit_record(id):
     if edit_form.validate():
         edit_form.populate_obj(record)
         db.session.commit()
+        return redirect(url_for('records'))
     # TODO Evaluate need or functionaly of this 
     with open('app/errors.txt', 'a') as errorFile:
         for key in edit_form.errors: 
@@ -161,6 +162,10 @@ def api_id():
     rs = RecordSchema()
 
     result = Record.query.get(id)
+    try:
+        log_this(rs.dump(result), "json.txt")
+    except:
+        log_this("rs dump fail", "json.txt")
     return jsonify(rs.dump(result))
 
 # API to insert new record into database, accepts JSON data

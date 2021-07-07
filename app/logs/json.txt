@@ -93,3 +93,51 @@ String
 21-07-06 17:18:24
 {'Employee': '24', 'TableNumber': '24', 'Job': '74574', 'CastDate': '2021-6-2T00:00:00', 'CastShift': '1', 'Operation': '20', 'Part': '9223446', 'GoodQuantity': '0'}
 
+21-07-07 10:43:17
+{'Employee': '941', 'TableNumber': '1', 'Job': '83541', 'CastDate': '2021-6-16T00:00:00', 'CastShift': '1', 'Operation': '15', 'Part': '4070', 'GoodQuantity': '0'}
+
+21-07-07 10:43:21
+{'GoodQuantity': '', 'index': '128'}
+
+21-07-07 10:45:26
+{'Employee': '941', 'TableNumber': '1', 'Job': '83422', 'CastDate': '2021-6-24T00:00:00', 'CastShift': '1', 'Operation': '40', 'Part': '4067', 'GoodQuantity': '0'}
+
+21-07-07 13:26:49
+{'MixedParts': None, 'Buffing': None, 'Rework': None, 'GateVestige': None, 'EndTime': None, 'Contamination': None, 'id': 129, 'Bent': None, 'HeatSinks': None, 'Dimensional': None, 'PartsNotTapped': None, 'LeakTest': None, 'EjectorPinLength': None, 'Assembly': None, 'TableNumber': 1, 'Flash': None, 'DamagedDie': None, 'CastDate': '2021-06-24T00:00:00', 'Porosity': None, 'CastShift': 1, 'Weight': None, 'StartUp': None, 'Debris': None, 'NIT': None, 'Lamination': None, 'Plating': None, 'PartDamage': None, 'Skiving': None, 'Operation': 40, 'Soldering': None, 'TrimDamage': None, 'SurfaceFinish': None, 'StartTime': '2021-07-07T10:45:26', 'Other': None, 'AutoSort': None, 'WrongPart': None, 'Part': 4067, 'Job': 83422, 'Employee': '941', 'GoodQuantity': 0, 'PartsOnGates': None, 'BrokenCore': None, 'BadThreads': None, 'Blisters': None, 'PoorFill': None}
+
+21-07-07 13:27:40
+json fail
+
+21-07-07 13:28:00
+rs dump fail
+
+21-07-07 13:28:49
+rs dump fail
+
+21-07-07 13:35:08
+rs dump fail
+
+21-07-07 13:35:15
+rs dump fail
+
+21-07-07 13:35:15
+rs dump fail
+
+21-07-07 13:39:16
+rs dump fail
+
+21-07-07 13:39:17
+rs dump fail
+
+21-07-07 13:39:17
+rs dump fail
+
+21-07-07 13:41:31
+rs dump fail
+
+21-07-07 13:47:16
+rs dump fail
+
+21-07-07 15:40:57
+{'AutoSort': None, 'CastShift': 1, 'EjectorPinLength': None, 'Buffing': None, 'WrongPart': None, 'DamagedDie': None, 'Lamination': None, 'Other': None, 'GateVestige': None, 'PartsOnGates': None, 'HeatSinks': None, 'PoorFill': None, 'TableNumber': 1, 'BrokenCore': None, 'Soldering': None, 'LeakTest': None, 'Dimensional': None, 'Flash': None, 'GoodQuantity': 2, 'PartsNotTapped': None, 'Debris': None, 'Part': 4070, 'EndTime': '2021-07-07T10:43:21', 'Operation': 15, 'CastDate': '2021-06-16T00:00:00', 'PartDamage': None, 'NIT': None, 'Bent': None, 'MixedParts': None, 'Contamination': None, 'Rework': None, 'TrimDamage': None, 'Assembly': None, 'Employee': '9411', 'StartUp': None, 'BadThreads': None, 'id': 128, 'SurfaceFinish': None, 'Plating': None, 'StartTime': '2021-07-07T10:43:17', 'Blisters': None, 'Weight': None, 'Job': 83541, 'Skiving': None, 'Porosity': None}
+
