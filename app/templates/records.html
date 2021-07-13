@@ -2,25 +2,31 @@
 
 {% block content %}
 <div class="container">
+    <span>{{records|length }} Records Found</span>
     <a href='/records/download'>Download</a>
 
     {% for record in records %}
+    
     <ul id=record.Employee>
         <li>
-            <span class="field-name">ID</span>
+            <span class="field-name">Record #</span>
             <a href="/edit_record/{{ record.id }}"> {{ record.id }}</a>
         </li>
         <li>
-            <span class="field-name">User</span>
-            <span class="field-value">{{ record.Employee }}</span>
-        </li>
-        <li>
-            <span class="field-name">Date</span>
-            <span class="field-value">{{ record.StartTime }}</span>
+            <span class="field-name">Part</span>
+            <span class="field-value">{{ record.Part }}</span>
         </li>
         <li>
             <span class="field-name">Job</span>
             <span class="field-value">{{ record.Job }}</span>
+        </li>
+        <li>
+            <span class="field-name">Employee</span>
+            <span class="field-value">{{ record.Employee }}</span>
+        </li>
+        <li>
+            <span class="field-name">Sort Date</span>
+            <span class="field-value">{{ record.StartTime }}</span>
         </li>
         <li>
             <span class="field-name">Good Quantity</span>

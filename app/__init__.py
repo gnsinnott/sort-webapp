@@ -9,7 +9,7 @@ ma = Marshmallow()
 
 def create_app():
     app = Flask(__name__, instance_relative_config=False)
-    app.config.from_object('config.DevConfig')
+    app.config.from_object('config.ProductionConfig')
     db.init_app(app)
 
     with app.app_context():

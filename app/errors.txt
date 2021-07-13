@@ -35,3 +35,11 @@ csrf_token: The CSRF token is missing.
 csrf_token: The CSRF token is missing.
 csrf_token: The CSRF token is missing.
 csrf_token: The CSRF token is missing.
+csrf_token: The CSRF token is missing.
+csrf_token: The CSRF token is missing.
+csrf_token: The CSRF token is missing.
+csrf_token: The CSRF token is missing.
+csrf_token: The CSRF token is missing.
+csrf_token: The CSRF token is missing.
+csrf_token: The CSRF token is missing.
+csrf_token: The CSRF token is missing.

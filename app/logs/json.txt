@@ -141,3 +141,120 @@ rs dump fail
 21-07-07 15:40:57
 {'AutoSort': None, 'CastShift': 1, 'EjectorPinLength': None, 'Buffing': None, 'WrongPart': None, 'DamagedDie': None, 'Lamination': None, 'Other': None, 'GateVestige': None, 'PartsOnGates': None, 'HeatSinks': None, 'PoorFill': None, 'TableNumber': 1, 'BrokenCore': None, 'Soldering': None, 'LeakTest': None, 'Dimensional': None, 'Flash': None, 'GoodQuantity': 2, 'PartsNotTapped': None, 'Debris': None, 'Part': 4070, 'EndTime': '2021-07-07T10:43:21', 'Operation': 15, 'CastDate': '2021-06-16T00:00:00', 'PartDamage': None, 'NIT': None, 'Bent': None, 'MixedParts': None, 'Contamination': None, 'Rework': None, 'TrimDamage': None, 'Assembly': None, 'Employee': '9411', 'StartUp': None, 'BadThreads': None, 'id': 128, 'SurfaceFinish': None, 'Plating': None, 'StartTime': '2021-07-07T10:43:17', 'Blisters': None, 'Weight': None, 'Job': 83541, 'Skiving': None, 'Porosity': None}
 
+21-07-07 16:52:45
+{'Blisters': '10', 'Contamination': '1', 'Lamination': '19', 'PartDamage': '54', 'GoodQuantity': '1980', 'index': '129'}
+
+21-07-08 10:18:52
+{'EjectorPinLength': None, 'Bent': None, 'SurfaceFinish': None, 'NIT': None, 'Rework': None, 'Debris': None, 'DamagedDie': None, 'Part': 4070, 'Dimensional': None, 'Porosity': None, 'Skiving': None, 'LeakTest': None, 'GateVestige': None, 'Plating': None, 'PartDamage': None, 'Assembly': None, 'Flash': None, 'Weight': None, 'Employee': '9411', 'CastShift': 1, 'PartsOnGates': None, 'Blisters': None, 'PoorFill': None, 'StartUp': None, 'Operation': 15, 'MixedParts': None, 'Other': None, 'EndTime': '2021-07-07T10:43:21', 'BrokenCore': None, 'AutoSort': None, 'id': 128, 'CastDate': '2021-06-16T00:00:00', 'TrimDamage': None, 'Soldering': None, 'StartTime': '2021-07-07T10:43:17', 'HeatSinks': None, 'BadThreads': None, 'WrongPart': None, 'GoodQuantity': 2, 'PartsNotTapped': None, 'Buffing': None, 'Contamination': None, 'TableNumber': 1, 'Lamination': None, 'Job': 83541}
+
+21-07-08 10:19:13
+{'EjectorPinLength': None, 'Bent': None, 'SurfaceFinish': None, 'NIT': None, 'Rework': None, 'Debris': None, 'DamagedDie': None, 'Part': 4067, 'Dimensional': None, 'Porosity': None, 'Skiving': None, 'LeakTest': None, 'GateVestige': None, 'Plating': None, 'PartDamage': 54, 'Assembly': None, 'Flash': None, 'Weight': None, 'Employee': '941', 'CastShift': 1, 'PartsOnGates': None, 'Blisters': 10, 'PoorFill': None, 'StartUp': None, 'Operation': 40, 'MixedParts': None, 'Other': None, 'EndTime': '2021-07-07T16:52:45', 'BrokenCore': None, 'AutoSort': None, 'id': 129, 'CastDate': '2021-06-24T00:00:00', 'TrimDamage': None, 'Soldering': None, 'StartTime': '2021-07-07T10:45:26', 'HeatSinks': None, 'BadThreads': None, 'WrongPart': None, 'GoodQuantity': 1980, 'PartsNotTapped': None, 'Buffing': None, 'Contamination': 1, 'TableNumber': 1, 'Lamination': 19, 'Job': 83422}
+
+21-07-08 10:23:08
+{}
+
+21-07-08 10:23:12
+{'EjectorPinLength': None, 'Bent': None, 'SurfaceFinish': None, 'NIT': None, 'Rework': None, 'Debris': None, 'DamagedDie': None, 'Part': 4067, 'Dimensional': None, 'Porosity': None, 'Skiving': None, 'LeakTest': None, 'GateVestige': None, 'Plating': None, 'PartDamage': 54, 'Assembly': None, 'Flash': None, 'Weight': None, 'Employee': '941', 'CastShift': 1, 'PartsOnGates': None, 'Blisters': 10, 'PoorFill': None, 'StartUp': None, 'Operation': 40, 'MixedParts': None, 'Other': None, 'EndTime': '2021-07-07T16:52:45', 'BrokenCore': None, 'AutoSort': None, 'id': 129, 'CastDate': '2021-06-24T00:00:00', 'TrimDamage': None, 'Soldering': None, 'StartTime': '2021-07-07T10:45:26', 'HeatSinks': None, 'BadThreads': None, 'WrongPart': None, 'GoodQuantity': 1980, 'PartsNotTapped': None, 'Buffing': None, 'Contamination': 1, 'TableNumber': 1, 'Lamination': 19, 'Job': 83422}
+
+21-07-09 07:18:29
+{'Employee': '941', 'TableNumber': '27', 'Job': '83002', 'CastDate': '2021-6-16T00:00:00', 'CastShift': '1', 'Operation': '40', 'Part': '3768', 'GoodQuantity': '0'}
+
+21-07-09 07:26:47
+{'Employee': '036', 'TableNumber': '5', 'Job': '82770', 'CastDate': '2021-7-9T00:00:00', 'CastShift': '1', 'Operation': '75', 'Part': '3701', 'GoodQuantity': '0'}
+
+21-07-09 07:55:09
+{'PoorFill': '4', 'GoodQuantity': '350', 'index': '130'}
+
+21-07-09 07:56:29
+{'Employee': '941', 'TableNumber': '25', 'Job': '83398', 'CastDate': '2021-6-11T00:00:00', 'CastShift': '1', 'Operation': '40', 'Part': '3737', 'GoodQuantity': '0'}
+
+21-07-09 11:29:21
+{'Blisters': None, 'BadThreads': None, 'PartsNotTapped': None, 'PartsOnGates': None, 'Lamination': None, 'CastShift': 1, 'TableNumber': 5, 'Employee': '036', 'Buffing': None, 'SurfaceFinish': None, 'CastDate': '2021-07-09T00:00:00', 'StartUp': None, 'BrokenCore': None, 'AutoSort': None, 'HeatSinks': None, 'Part': 3701, 'Job': 82770, 'Porosity': None, 'Rework': None, 'TrimDamage': None, 'Debris': None, 'Plating': None, 'id': 131, 'GateVestige': None, 'Flash': None, 'Contamination': None, 'EjectorPinLength': None, 'Soldering': None, 'MixedParts': None, 'PartDamage': None, 'StartTime': '2021-07-09T07:26:47', 'GoodQuantity': 0, 'Weight': None, 'Other': None, 'PoorFill': None, 'LeakTest': None, 'Skiving': None, 'NIT': None, 'EndTime': None, 'Bent': None, 'Dimensional': None, 'WrongPart': None, 'Assembly': None, 'DamagedDie': None, 'Operation': 75}
+
+21-07-09 11:29:34
+{}
+
+21-07-09 11:29:37
+{'Blisters': None, 'BadThreads': None, 'PartsNotTapped': None, 'PartsOnGates': None, 'Lamination': None, 'CastShift': 1, 'TableNumber': 25, 'Employee': '941', 'Buffing': None, 'SurfaceFinish': None, 'CastDate': '2021-06-11T00:00:00', 'StartUp': None, 'BrokenCore': None, 'AutoSort': None, 'HeatSinks': None, 'Part': 3737, 'Job': 83398, 'Porosity': None, 'Rework': None, 'TrimDamage': None, 'Debris': None, 'Plating': None, 'id': 132, 'GateVestige': None, 'Flash': None, 'Contamination': None, 'EjectorPinLength': None, 'Soldering': None, 'MixedParts': None, 'PartDamage': None, 'StartTime': '2021-07-09T07:56:29', 'GoodQuantity': 0, 'Weight': None, 'Other': None, 'PoorFill': None, 'LeakTest': None, 'Skiving': None, 'NIT': None, 'EndTime': None, 'Bent': None, 'Dimensional': None, 'WrongPart': None, 'Assembly': None, 'DamagedDie': None, 'Operation': 40}
+
+21-07-09 11:29:38
+{}
+
+21-07-09 11:29:40
+{'Blisters': None, 'BadThreads': None, 'PartsNotTapped': None, 'PartsOnGates': None, 'Lamination': None, 'CastShift': 1, 'TableNumber': 27, 'Employee': '941', 'Buffing': None, 'SurfaceFinish': None, 'CastDate': '2021-06-16T00:00:00', 'StartUp': None, 'BrokenCore': None, 'AutoSort': None, 'HeatSinks': None, 'Part': 3768, 'Job': 83002, 'Porosity': None, 'Rework': None, 'TrimDamage': None, 'Debris': None, 'Plating': None, 'id': 130, 'GateVestige': None, 'Flash': None, 'Contamination': None, 'EjectorPinLength': None, 'Soldering': None, 'MixedParts': None, 'PartDamage': None, 'StartTime': '2021-07-09T07:18:29', 'GoodQuantity': 350, 'Weight': None, 'Other': None, 'PoorFill': 4, 'LeakTest': None, 'Skiving': None, 'NIT': None, 'EndTime': '2021-07-09T07:55:09', 'Bent': None, 'Dimensional': None, 'WrongPart': None, 'Assembly': None, 'DamagedDie': None, 'Operation': 40}
+
+21-07-09 13:16:48
+{'Plating': '2', 'GoodQuantity': '1600', 'index': '131'}
+
+21-07-09 13:18:09
+{'Employee': '036', 'TableNumber': '5', 'Job': '82770', 'CastDate': '2021-7-20T00:00:00', 'CastShift': '1', 'Operation': '25', 'Part': '3450', 'GoodQuantity': '0'}
+
+21-07-09 13:58:02
+{'Blisters': None, 'BadThreads': None, 'PartsNotTapped': None, 'PartsOnGates': None, 'Lamination': None, 'CastShift': 1, 'TableNumber': 27, 'Employee': '941', 'Buffing': None, 'SurfaceFinish': None, 'CastDate': '2021-06-16T00:00:00', 'StartUp': None, 'BrokenCore': None, 'AutoSort': None, 'HeatSinks': None, 'Part': 3768, 'Job': 83002, 'Porosity': None, 'Rework': None, 'TrimDamage': None, 'Debris': None, 'Plating': None, 'id': 130, 'GateVestige': None, 'Flash': None, 'Contamination': None, 'EjectorPinLength': None, 'Soldering': None, 'MixedParts': None, 'PartDamage': None, 'StartTime': '2021-07-09T07:18:29', 'GoodQuantity': 350, 'Weight': None, 'Other': None, 'PoorFill': 4, 'LeakTest': None, 'Skiving': None, 'NIT': None, 'EndTime': '2021-07-09T07:55:09', 'Bent': None, 'Dimensional': None, 'WrongPart': None, 'Assembly': None, 'DamagedDie': None, 'Operation': 40}
+
+21-07-09 14:03:43
+{'Blisters': 10, 'BadThreads': None, 'PartsNotTapped': None, 'PartsOnGates': None, 'Lamination': 19, 'CastShift': 1, 'TableNumber': 1, 'Employee': '941', 'Buffing': None, 'SurfaceFinish': None, 'CastDate': '2021-06-24T00:00:00', 'StartUp': None, 'BrokenCore': None, 'AutoSort': None, 'HeatSinks': None, 'Part': 4067, 'Job': 83422, 'Porosity': None, 'Rework': None, 'TrimDamage': None, 'Debris': None, 'Plating': None, 'id': 129, 'GateVestige': None, 'Flash': None, 'Contamination': 1, 'EjectorPinLength': None, 'Soldering': None, 'MixedParts': None, 'PartDamage': 54, 'StartTime': '2021-07-07T10:45:26', 'GoodQuantity': 1980, 'Weight': None, 'Other': None, 'PoorFill': None, 'LeakTest': None, 'Skiving': None, 'NIT': None, 'EndTime': '2021-07-07T16:52:45', 'Bent': None, 'Dimensional': None, 'WrongPart': None, 'Assembly': None, 'DamagedDie': None, 'Operation': 40}
+
+21-07-09 14:12:28
+{'GoodQuantity': '30', 'index': '133'}
+
+21-07-09 14:30:22
+{'Employee': '2534', 'TableNumber': '4034', 'Job': '83584', 'CastDate': '2021-7-7T00:00:00', 'CastShift': '2', 'Operation': '40', 'Part': '4034', 'GoodQuantity': '0'}
+
+21-07-09 14:30:54
+{'Other': '6', 'PartDamage': '2', 'GoodQuantity': '756', 'index': '134'}
+
+21-07-10 14:16:40
+{'Employee': '036', 'TableNumber': '', 'Job': '83312', 'CastDate': '2021-7-10T00:00:00', 'CastShift': '1', 'Operation': '40', 'Part': '4056', 'GoodQuantity': '0'}
+
+21-07-10 14:16:43
+{'Employee': '036', 'TableNumber': '', 'Job': '83312', 'CastDate': '2021-7-10T00:00:00', 'CastShift': '1', 'Operation': '40', 'Part': '4056', 'GoodQuantity': '0'}
+
+21-07-10 14:16:46
+{'Employee': '036', 'TableNumber': '', 'Job': '83312', 'CastDate': '2021-7-10T00:00:00', 'CastShift': '1', 'Operation': '40', 'Part': '4056', 'GoodQuantity': '0'}
+
+21-07-10 14:16:47
+{'Employee': '036', 'TableNumber': '', 'Job': '83312', 'CastDate': '2021-7-10T00:00:00', 'CastShift': '1', 'Operation': '40', 'Part': '4056', 'GoodQuantity': '0'}
+
+21-07-10 14:16:49
+{'Employee': '036', 'TableNumber': '', 'Job': '83312', 'CastDate': '2021-7-10T00:00:00', 'CastShift': '1', 'Operation': '40', 'Part': '4056', 'GoodQuantity': '0'}
+
+21-07-10 14:16:51
+{'Employee': '036', 'TableNumber': '', 'Job': '83312', 'CastDate': '2021-7-10T00:00:00', 'CastShift': '1', 'Operation': '40', 'Part': '4056', 'GoodQuantity': '0'}
+
+21-07-10 14:16:52
+{'Employee': '036', 'TableNumber': '', 'Job': '83312', 'CastDate': '2021-7-10T00:00:00', 'CastShift': '1', 'Operation': '40', 'Part': '4056', 'GoodQuantity': '0'}
+
+21-07-10 14:16:58
+{'Employee': '036', 'TableNumber': '', 'Job': '83312', 'CastDate': '2021-7-10T00:00:00', 'CastShift': '1', 'Operation': '40', 'Part': '4056', 'GoodQuantity': '0'}
+
+21-07-10 14:17:00
+{'Employee': '036', 'TableNumber': '', 'Job': '83312', 'CastDate': '2021-7-10T00:00:00', 'CastShift': '1', 'Operation': '40', 'Part': '4056', 'GoodQuantity': '0'}
+
+21-07-10 14:17:12
+{'Employee': '036', 'TableNumber': '', 'Job': '83312', 'CastDate': '2021-7-10T00:00:00', 'CastShift': '1', 'Operation': '40', 'Part': '4056', 'GoodQuantity': '0'}
+
+21-07-10 14:17:46
+{'Employee': '036', 'TableNumber': '5', 'Job': '83312', 'CastDate': '2021-7-10T00:00:00', 'CastShift': '1', 'Operation': '40', 'Part': '4056', 'GoodQuantity': '0'}
+
+21-07-10 14:18:05
+{'PartDamage': '3', 'GoodQuantity': '1827', 'index': '135'}
+
+21-07-12 16:31:13
+{'GoodQuantity': '', 'index': '132'}
+
+21-07-13 08:22:57
+{'Employee': '917', 'TableNumber': '26', 'Job': '83547', 'CastDate': '2021-7-7T00:00:00', 'CastShift': '1', 'Operation': '50', 'Part': '4003', 'GoodQuantity': '0'}
+
+21-07-13 08:37:27
+{'Employee': '941', 'TableNumber': '19', 'Job': '82125', 'CastDate': '2021-2-11T00:00:00', 'CastShift': '2', 'Operation': '50', 'Part': '3771', 'GoodQuantity': '0'}
+
+21-07-13 08:41:17
+{'Employee': '036', 'TableNumber': '6', 'Job': '82998', 'CastDate': '2021-7-13T00:00:00', 'CastShift': '2', 'Operation': '25', 'Part': '4169', 'GoodQuantity': '0'}
+
+21-07-13 09:02:17
+{'Bent': '2', 'Dimensional': '4', 'GoodQuantity': '360', 'index': '2'}
+
+21-07-13 09:02:20
+{'Bent': '2', 'Dimensional': '4', 'GoodQuantity': '360', 'index': '2'}
+
