@@ -64,17 +64,24 @@ def records():
         dateCriteria = ""
         partCriteria = ""
         jobCriteria = ""
-    # if items found add them to the search criteria variables and set return limit to 0 
+        employeeCriteria = "%"
+    # else set each criteria to value sent
     else:
+        returnLimit = -1
         dateCriteria = criteria["date"]
         partCriteria = criteria["part"]
         jobCriteria = criteria["job"]
-        returnLimit = -1 # return limit -1 equals all
+        # employee criteria can't be blank "%" is used as wildcard for sql like searches
+        if criteria["employee"] != "":
+            employeeCriteria = criteria["employee"]
+        else:
+            employeeCriteria = "%"
 
     # query that only shows first 20 results
     records = Record.query.filter(
             Record.StartTime.startswith(dateCriteria),
             Record.Part.startswith(partCriteria),
+            Record.Employee.like(employeeCriteria),
             Record.Job.startswith(jobCriteria)).limit(returnLimit).all()
 
     # same query as above but includes all results, used for csv file download

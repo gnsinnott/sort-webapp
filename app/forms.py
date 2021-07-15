@@ -8,6 +8,7 @@ class SearchForm(FlaskForm) :
     date = DateField('Sort Date')
     part = StringField('Part')
     job = StringField('Job')
+    employee = StringField('Employee')
     submit = SubmitField('Submit')
 
 class EditForm(FlaskForm) :
