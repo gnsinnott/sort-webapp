@@ -3,6 +3,6 @@ venv
 __pycache__
 config.py
 *.csv
-json.txt
-errors.txt
+app/logs/json.txt
+app/errors.txt
 *.db
