@@ -79,6 +79,7 @@ def records():
 
     # query that only shows first 20 results
     records = Record.query.filter(
+            Record.Obsolete == 0,
             Record.StartTime.startswith(dateCriteria),
             Record.Part.startswith(partCriteria),
             Record.Employee.like(employeeCriteria),
@@ -86,9 +87,10 @@ def records():
 
     # same query as above but includes all results, used for csv file download
     exportRecords = Record.query.filter(
-            Record.StartTime.startswith(dateCriteria),
-            Record.Part.startswith(partCriteria),
-            Record.Job.startswith(jobCriteria)).all()
+        Record.Obsolete == 0,
+        Record.StartTime.startswith(dateCriteria),
+        Record.Part.startswith(partCriteria),
+        Record.Job.startswith(jobCriteria)).all()
 
     # create csv file with todays date, populate csv with query results for exportRecords
     # file created in downloads folder
@@ -230,11 +232,16 @@ def finish_record():
     # Reply with convirmation of record update
     return{"response" : "Record " + str(id) + " updated", "error": False}
 
-@app.route("/api/v1/delete_record/<id>", methods=['GET', 'POST'])
+@app.route("/api/v1/delete_record", methods=['GET', 'POST'])
 def delete_record():
+    json_data = request.get_json()
+    log_this(json_data, "json.txt")
+    id = int(json_data["id"])
     record = Record.query.get(id)
-    record.obsolete = 1
-    session.commit()
+    record.__setattr__('Obsolete', 1)
+    db.session.commit()
+    response = {"status": "true"}
+    return response
     
 
 @app.route("/app/download", methods=['GET', 'POST'])
