@@ -74,6 +74,8 @@ class Record(db.Model):
     EndTime = db.Column(db.DateTime, nullable=True)
     Rework = db.Column(db.Integer, nullable=True)
     NIT = db.Column(db.Integer, nullable=True)
+    Hours = db.Column(db.Integer, nullable=True)
+    Obsolete = db.Column(db.Boolean, default=0)
 
     def __repr__(self):
         return "<User {}>".format(self.Employee)
