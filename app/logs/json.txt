@@ -258,3 +258,78 @@ rs dump fail
 21-07-13 09:02:20
 {'Bent': '2', 'Dimensional': '4', 'GoodQuantity': '360', 'index': '2'}
 
+21-07-13 10:00:16
+{'Employee': '941', 'TableNumber': '22', 'Job': '83389', 'CastDate': '2021-6-21T00:00:00', 'CastShift': '2', 'Operation': '50', 'Part': '3686', 'GoodQuantity': '0'}
+
+21-07-13 10:00:24
+{'Employee': '941', 'TableNumber': '22', 'Job': '83389', 'CastDate': '2021-6-21T00:00:00', 'CastShift': '2', 'Operation': '50', 'Part': '3686', 'GoodQuantity': '0'}
+
+21-07-13 10:00:24
+{'Employee': '941', 'TableNumber': '22', 'Job': '83389', 'CastDate': '2021-6-21T00:00:00', 'CastShift': '2', 'Operation': '50', 'Part': '3686', 'GoodQuantity': '0'}
+
+21-07-13 10:03:43
+{'GateVestige': '43', 'PartDamage': '16', 'GoodQuantity': '300', 'index': '6'}
+
+21-07-13 10:06:35
+{'Employee': '941', 'TableNumber': '23', 'Job': '83641', 'CastDate': '2021-6-25T00:00:00', 'CastShift': '2', 'Operation': '30', 'Part': '3686', 'GoodQuantity': '0'}
+
+21-07-13 13:09:13
+{'Employee': '039', 'TableNumber': '5', 'Job': '82998', 'CastDate': '2021-7-2T00:00:00', 'CastShift': '2', 'Operation': '25', 'Part': '4169', 'GoodQuantity': '0'}
+
+21-07-13 13:09:22
+{'GoodQuantity': '150', 'index': '8'}
+
+21-07-13 13:17:36
+{'Bent': '1', 'GoodQuantity': '3282', 'index': '7'}
+
+21-07-13 13:32:05
+{'Employee': '941', 'TableNumber': '22', 'Job': '83641', 'CastDate': '2021-6-25T00:00:00', 'CastShift': '2', 'Operation': '40', 'Part': '3686', 'GoodQuantity': '0'}
+
+21-07-13 13:36:51
+{'Employee': '2534', 'TableNumber': '4056', 'Job': '83312', 'CastDate': '2021-6-16T00:00:00', 'CastShift': '3', 'Operation': '40', 'Part': '4056', 'GoodQuantity': '0'}
+
+21-07-13 14:16:42
+{'GoodQuantity': '2142', 'index': '10'}
+
+21-07-13 14:18:38
+{'Employee': '036', 'TableNumber': '5', 'Job': '82998', 'CastDate': '2021-7-8T00:00:00', 'CastShift': '1', 'Operation': '25', 'Part': '4169', 'GoodQuantity': '0'}
+
+21-07-13 14:18:49
+{'GoodQuantity': '336', 'index': '11'}
+
+21-07-13 17:07:27
+{'Contamination': '133', 'Lamination': '7', 'PartDamage': '51', 'GoodQuantity': '1500', 'index': '9'}
+
+21-07-14 04:18:38
+{'Employee': '036', 'TableNumber': '6', 'Job': '82998', 'CastDate': '2021-7-12T00:00:00', 'CastShift': '1', 'Operation': '25', 'Part': '4169', 'GoodQuantity': '0'}
+
+21-07-14 04:30:01
+{'Employee': '2534', 'TableNumber': '07', 'Job': '82998', 'CastDate': '2021-6-12T00:00:00', 'CastShift': '1', 'Operation': '25', 'Part': '4169', 'GoodQuantity': '0'}
+
+21-07-14 13:55:31
+{'Employee': '2534', 'TableNumber': '4056', 'Job': '83525', 'CastDate': '2021-7-12T00:00:00', 'CastShift': '3', 'Operation': '40', 'Part': '4056', 'GoodQuantity': '0'}
+
+21-07-14 14:12:22
+{'LeakTest': '2', 'PartDamage': '2', 'PoorFill': '3', 'GoodQuantity': '2079', 'index': '14'}
+
+21-07-14 17:02:07
+{'Employee': '941', 'TableNumber': '22', 'Job': '83641', 'CastDate': '2021-6-25T00:00:00', 'CastShift': '2', 'Operation': '40', 'Part': '3686', 'GoodQuantity': '0'}
+
+21-07-14 17:02:38
+{'Blisters': '1', 'Contamination': '24', 'Lamination': '1', 'PartDamage': '12', 'GoodQuantity': '600', 'index': '15'}
+
+21-07-14 17:03:01
+{'Employee': '941', 'TableNumber': '22', 'Job': '83389', 'CastDate': '2021-6-24T00:00:00', 'CastShift': '2', 'Operation': '50', 'Part': '3686', 'GoodQuantity': '0'}
+
+21-07-14 17:06:59
+{'Blisters': '2', 'Contamination': '4', 'DamagedDie': '308', 'Lamination': '10', 'PartDamage': '81', 'PoorFill': '2', 'GoodQuantity': '2700', 'index': '16'}
+
+21-07-15 04:17:08
+{'Employee': '2534', 'TableNumber': '4056', 'Job': '83525', 'CastDate': '2021-7-9T00:00:00', 'CastShift': '2', 'Operation': '40', 'Part': '4056', 'GoodQuantity': '0'}
+
+21-07-15 12:55:20
+{'Employee': '2534', 'TableNumber': '4056', 'Job': '83525', 'CastDate': '2021-7-8T00:00:00', 'CastShift': '3', 'Operation': '40', 'Part': '4056', 'GoodQuantity': '0'}
+
+21-07-15 12:56:02
+{'LeakTest': '2', 'GoodQuantity': '2142', 'index': '18'}
+
