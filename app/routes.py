@@ -135,7 +135,7 @@ def edit_record(id):
 
 
     return render_template(
-        'edit_records2.html',
+        'edit_records.html',
         edit_form = edit_form,
         template = "form-template"
     )
@@ -229,6 +229,13 @@ def finish_record():
     
     # Reply with convirmation of record update
     return{"response" : "Record " + str(id) + " updated", "error": False}
+
+@app.route("/api/v1/delete_record/<id>", methods=['GET', 'POST'])
+def delete_record():
+    record = Record.query.get(id)
+    record.obsolete = 1
+    session.commit()
+    
 
 @app.route("/app/download", methods=['GET', 'POST'])
 def app_downloads():
