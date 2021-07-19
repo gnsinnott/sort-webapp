@@ -5,7 +5,8 @@ from wtforms.fields.html5 import DateField, DateTimeField
 
 
 class SearchForm(FlaskForm) :
-    date = DateField('Sort Date')
+    start_date = DateField('Sort Start Date')
+    end_date = DateField('Sort End Date')
     part = StringField('Part')
     job = StringField('Job')
     employee = StringField('Employee')

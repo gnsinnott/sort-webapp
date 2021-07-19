@@ -1,5 +1,5 @@
 from flask import json, request, make_response, render_template, redirect, url_for, flash, jsonify, make_response, send_file, session
-from datetime import datetime as dt
+from datetime import datetime as dt, timedelta
 from flask import current_app as app
 from sqlalchemy.orm.query import LockmodeArg
 
@@ -61,14 +61,19 @@ def records():
     # if no items added to criteria set all values to 0 and return limit to 20
     if len(criteria) == 0:
         returnLimit = 20
-        dateCriteria = ""
+        startDateCriteria = "2021-01-01"
+        endDateCriteria = dt.today()
         partCriteria = ""
         jobCriteria = ""
         employeeCriteria = "%"
     # else set each criteria to value sent
     else:
         returnLimit = -1
-        dateCriteria = criteria["date"]
+        startDateCriteria = criteria["start_date"]
+        if criteria["end_date"] != "":
+            endDateCriteria = dt.strptime(criteria["end_date"], '%Y-%m-%d') + timedelta(days = 1)
+        else:
+            endDateCriteria = dt.strptime(startDateCriteria, "%Y-%m-%d") + timedelta(days = 1)
         partCriteria = criteria["part"]
         jobCriteria = criteria["job"]
         # employee criteria can't be blank "%" is used as wildcard for sql like searches
@@ -76,11 +81,12 @@ def records():
             employeeCriteria = criteria["employee"]
         else:
             employeeCriteria = "%"
+        print(endDateCriteria, startDateCriteria)
 
     # query that only shows first 20 results
     records = Record.query.filter(
             Record.Obsolete == 0,
-            Record.StartTime.startswith(dateCriteria),
+            Record.StartTime.between(startDateCriteria, endDateCriteria),
             Record.Part.startswith(partCriteria),
             Record.Employee.like(employeeCriteria),
             Record.Job.startswith(jobCriteria)).limit(returnLimit).all()
@@ -88,7 +94,7 @@ def records():
     # same query as above but includes all results, used for csv file download
     exportRecords = Record.query.filter(
         Record.Obsolete == 0,
-        Record.StartTime.startswith(dateCriteria),
+        Record.StartTime.between(startDateCriteria, endDateCriteria),
         Record.Part.startswith(partCriteria),
         Record.Job.startswith(jobCriteria)).all()
 
