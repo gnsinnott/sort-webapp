@@ -121,6 +121,17 @@ def records():
         records=records
     )
 
+# Show list of records that are active, where there is no EndTime
+@app.route("/records/active", methods=['GET', 'POST'])
+def active_records():
+    records = Record.query.filter(
+        Record.Obsolete == 0,
+        Record.EndTime == None).all()
+    return render_template(
+        'active_records.html',
+        records=records
+    )
+
 # Download of csv coresponding to filename passed thorugh session
 @app.route("/records/download", methods=['GET', 'POST'])
 def download_records():
