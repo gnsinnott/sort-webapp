@@ -43,3 +43,5 @@ WrongPart
 EndTime 
 Rework
 NIT
+Hours
+Obsolete
