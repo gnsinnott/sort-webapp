@@ -58,22 +58,26 @@ def records():
     # iterate over args and add it to criteria dictionary
     for key, value in request.args.items():
         criteria[key] = value
+    print(criteria)
     # if no items added to criteria set all values to 0 and return limit to 20
     if len(criteria) == 0:
         returnLimit = 20
         startDateCriteria = "2021-01-01"
-        endDateCriteria = dt.today()
+        endDateCriteria = dt.today().strftime('%Y-%m-%d')
         partCriteria = ""
         jobCriteria = ""
         employeeCriteria = "%"
     # else set each criteria to value sent
     else:
         returnLimit = -1
-        startDateCriteria = criteria["start_date"]
+        if criteria['start_date'] != "" :
+            startDateCriteria = criteria["start_date"]
+        else:
+            startDateCriteria = "2021-01-01"
         if criteria["end_date"] != "":
             endDateCriteria = dt.strptime(criteria["end_date"], '%Y-%m-%d') + timedelta(days = 1)
         else:
-            endDateCriteria = dt.strptime(startDateCriteria, "%Y-%m-%d") + timedelta(days = 1)
+            endDateCriteria = dt.today() + timedelta(days = 1)
         partCriteria = criteria["part"]
         jobCriteria = criteria["job"]
         # employee criteria can't be blank "%" is used as wildcard for sql like searches
