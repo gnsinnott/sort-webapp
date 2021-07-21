@@ -58,7 +58,6 @@ def records():
     # iterate over args and add it to criteria dictionary
     for key, value in request.args.items():
         criteria[key] = value
-    print(criteria)
     # if no items added to criteria set all values to 0 and return limit to 20
     if len(criteria) == 0:
         returnLimit = 20
@@ -85,7 +84,6 @@ def records():
             employeeCriteria = criteria["employee"]
         else:
             employeeCriteria = "%"
-        print(endDateCriteria, startDateCriteria)
 
     # query that only shows first 20 results
     records = Record.query.filter(
@@ -144,6 +142,8 @@ def download_records():
 def edit_record(id):
     # Retrive record from DB
     record = Record.query.get(id)
+    rowdict = record.__dict__
+    status = rowdict['Obsolete']
     # Populate edit_form with record
     edit_form = EditForm(obj=record)
     if edit_form.validate():
@@ -160,6 +160,7 @@ def edit_record(id):
     return render_template(
         'edit_records.html',
         edit_form = edit_form,
+        status = status,
         template = "form-template"
     )
 
@@ -239,7 +240,6 @@ def finish_record():
     json_data.pop("index")
     # Set End time
     now = dt.strptime(dt.now().strftime("%Y-%m-%d %H:%M:%S"),"%Y-%m-%d %H:%M:%S")
-    print(now)
     json_data["EndTime"] = now
     # Select record from db
     record = Record.query.get(id)
@@ -256,10 +256,23 @@ def finish_record():
 @app.route("/api/v1/delete_record", methods=['GET', 'POST'])
 def delete_record():
     json_data = request.get_json()
+    log_this("Delete", "json.txt")
     log_this(json_data, "json.txt")
     id = int(json_data["id"])
     record = Record.query.get(id)
     record.__setattr__('Obsolete', 1)
+    db.session.commit()
+    response = {"status": "true"}
+    return response
+
+@app.route("/api/v1/restore_record", methods=['GET', 'POST'])
+def restore_record():
+    json_data = request.get_json()
+    log_this("Restore", "json.txt")
+    log_this(json_data, "json.txt")
+    id = int(json_data["id"])
+    record = Record.query.get(id)
+    record.__setattr__('Obsolete', 0)
     db.session.commit()
     response = {"status": "true"}
     return response

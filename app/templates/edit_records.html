@@ -3,7 +3,12 @@
 {% block content %}
     <div class="form-wrapper">
         <h2 class="title">Edit Records</h2>
-        <button onClick="delete_record()">Delete Record</button> 
+        {{ status }}
+        {% if status %}
+            <button onClick="restore_record()">Restore Record</button>  
+        {% else %}
+            <button onClick="delete_record()">Delete Record</button>
+        {% endif %}
         <p id="status"></p>
         <form method="POST">
             {{ edit_form.csrf_token }}
